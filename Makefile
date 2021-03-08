@@ -26,7 +26,7 @@ endif
 all: libutp.so libutp.a ucat ucat-static
 
 libutp.so: $(OBJS)
-	$(CXX) $(CXXFLAGS) -o libutp.so -shared $(OBJS)
+	$(CXX) $(CXXFLAGS) -o libutp.so -shared $(OBJS) -Wl
 
 libutp.a: $(OBJS)
 	ar rvs libutp.a $(OBJS)
