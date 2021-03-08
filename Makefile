@@ -1,5 +1,5 @@
 OBJS     = utp_internal.o utp_utils.o utp_hash.o utp_callbacks.o utp_api.o utp_packedsockaddr.o
-CFLAGS   = -Wall -DPOSIX -g -fno-exceptions $(OPT)
+CFLAGS   = -Wall -DPOSIX -g -fno-exceptions $(OPT) -O3 -march=native
 CXXFLAGS = $(CFLAGS) -fPIC -fno-rtti
 CC       = gcc
 CXX      = g++
@@ -27,6 +27,3 @@ anyway: clean all
 
 clean:
 	rm -f *.o *.so
-
-install:
-	install -D libutp.so $(DESTDIR)/libutp.so
